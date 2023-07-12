@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <style>
+        /* Thiết lập kích thước của đồng hồ */
+        .clock {
+            width: 200px;
+            height: 200px;
+            border-radius: 20%;
+            border: 10px solid black;
+            position: relative;
+            margin: 50px auto;
+        }
+
+        /* Thiết lập kiểu chữ cho các kim đồng hồ */
+        .clock::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: black;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Thiết lập vị trí và kích thước cho kim giờ */
+        .hour-hand {
+            position: absolute;
+            top: 23%;
+            left: 49%;
+            width: 6px;
+            height: 50px;
+            border-radius: 6px;
+            background: black;
+            transform-origin: bottom center;
+            animation: hour-hand 12s linear infinite;
+        }
+
+        /* Thiết lập vị trí và kích thước cho kim phút */
+        .minute-hand {
+            position: absolute;
+            top: 13%;
+            left: 50%;
+            width: 4px;
+            height: 70px;
+            border-radius: 4px;
+            background: black;
+            transform-origin: bottom center;
+            animation: minute-hand 60s linear infinite;
+        }
+
+        /*  kim giây */
+        .second-hand {
+            position: absolute;
+            top: 3%;
+            left: 50%;
+            width: 2px;
+            height: 90px;
+            border-radius: 2px;
+            background: red;
+            transform-origin: bottom center;
+            animation: second-hand 60s linear infinite;
+        }
+
+        /* Thiết lập animation cho các kim đồng hồ */
+        @keyframes hour-hand {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes minute-hand {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes second-hand {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="hour-hand"></div>
+        <div class="minute-hand"></div>
+        <div class="second-hand"></div>
+    </div>
+
+</body>
+
+</html>
